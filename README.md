@@ -1,4 +1,4 @@
-# Hex Viewer & Binary Viewer (Large Files) for JetBrains IDEs
+# Hex Viewer & Binary Viewer for JetBrains IDEs
 
 A read-only hex viewer and binary viewer for any file: .bin, .dat, .exe, .dll, .so, .dylib, .o, .class, .wasm, images, firmware dumps and files of 10 GB or more. It runs in IntelliJ IDEA, PyCharm, CLion, GoLand, WebStorm, Rider, Android Studio and the other IDEs on the same platform (2025.2 and later).
 

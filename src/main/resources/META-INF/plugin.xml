@@ -1,6 +1,6 @@
 <idea-plugin>
   <id>zovo.hex-viewer</id>
-  <name>Hex Viewer &amp; Binary Viewer (Large Files)</name>
+  <name>Hex Viewer &amp; Binary Viewer</name>
   <vendor url="https://github.com/theluckystrike">Zovo</vendor>
   <description><![CDATA[
 <p>A read-only hex viewer and binary viewer for any file: .bin, .dat, .exe, .dll, .so, .dylib, .o, .class, .wasm, images, firmware dumps and files of 10 GB or more. It works in IntelliJ IDEA, PyCharm, CLion, GoLand, WebStorm, Rider, Android Studio and the other IDEs built on the same platform.</p>

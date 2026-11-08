@@ -50,7 +50,7 @@ if (gate) sourceSets["main"].kotlin.srcDir("src/gate/kotlin")
 intellijPlatform {
     pluginConfiguration {
         id = "zovo.hex-viewer"
-        name = "Hex Viewer & Binary Viewer (Large Files)"
+        name = "Hex Viewer & Binary Viewer"
         version = providers.gradleProperty("pluginVersion")
         ideaVersion {
             sinceBuild = providers.gradleProperty("pluginSinceBuild")
