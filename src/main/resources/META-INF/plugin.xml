@@ -1,0 +1,49 @@
+<idea-plugin>
+  <id>zovo.hex-viewer</id>
+  <name>Hex Viewer &amp; Binary Viewer (Large Files)</name>
+  <vendor url="https://github.com/theluckystrike">Zovo</vendor>
+  <description><![CDATA[
+<p>A read-only hex viewer and binary viewer for any file: .bin, .dat, .exe, .dll, .so, .dylib, .o, .class, .wasm, images, firmware dumps and files of 10 GB or more. It works in IntelliJ IDEA, PyCharm, CLion, GoLand, WebStorm, Rider, Android Studio and the other IDEs built on the same platform.</p>
+<p>Right-click a file in the Project view or on an editor tab and pick Open in Hex Viewer. Binary files with no editor of their own (.bin, .so, .dylib, .o, .wasm and binary .dat files) open in the Hex tab by themselves. Files that already have an editor, like a decompiled .class, get a Hex tab next to it.</p>
+<h3>What you get</h3>
+<ul>
+  <li>Offset, hex and ASCII columns. 8 to 64 bytes per row. Text column in ASCII, Latin-1, UTF-8, UTF-16 LE/BE or EBCDIC.</li>
+  <li>Large files open at once and scroll to the last byte. Only the rows on screen are read, so a 10 GB file never goes into memory.</li>
+  <li>Go to offset: hex (0x1F40), decimal, relative (+0x100, -16) or end.</li>
+  <li>Find hex bytes (4A 5B ?? 00, with ?? as any byte), text, or UTF-16 text, forward and backward, with a Stop button for long searches.</li>
+  <li>Data inspector for the selected bytes: int8 to int64, unsigned and signed, float16, float32, float64, LEB128, GUID, Unix time and Windows FILETIME, little or big endian.</li>
+  <li>Copy the selection as hex, a C array, Python bytes, base64 or text.</li>
+  <li>The file type from its first bytes (PNG, JPEG, ZIP, PDF, SQLite, Mach-O, Windows PE, WebAssembly and more).</li>
+  <li>Follows the IDE theme, dark or light.</li>
+</ul>
+<p>Read-only and offline. The viewer never writes to your file and makes no network calls.</p>
+<p>Free and open source (MIT). Source code and issues: <a href="https://github.com/theluckystrike/hex-viewer-jetbrains">github.com/theluckystrike/hex-viewer-jetbrains</a>.</p>
+<h3>Support and more tools</h3>
+<ul>
+  <li><a href="https://github.com/sponsors/theluckystrike">Sponsor on GitHub</a> if this viewer saves you time.</li>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=zovo.zovo-hex-viewer">Hex Viewer for VS Code</a>, the same viewer with byte editing.</li>
+  <li><a href="https://plugins.jetbrains.com/plugin/35878-docx--pptx-viewer">DOCX &amp; PPTX Viewer</a> opens Word and PowerPoint files in the IDE.</li>
+  <li><a href="https://plugins.jetbrains.com/plugin/35879-netcdf-hdf5--numpy-viewer">NetCDF, HDF5 &amp; NumPy Viewer</a> opens .nc, .h5, .npy and .npz files.</li>
+  <li>All Zovo tools: <a href="https://github.com/theluckystrike">theluckystrike on GitHub</a>.</li>
+</ul>
+]]></description>
+  <change-notes><![CDATA[
+<p>0.1.0: first release. Read-only hex viewer for files of any size, with go to offset, find hex or text, a data inspector and copy as C array.</p>
+]]></change-notes>
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Binary Data" implementationClass="zovo.hexviewer.BinaryFileType" fieldName="INSTANCE"
+              extensions="bin;so;dylib;o;wasm"/>
+    <fileEditorProvider implementation="zovo.hexviewer.HexEditorProvider"/>
+  </extensions>
+
+  <actions>
+    <action id="zovo.hexviewer.OpenInHexViewer" class="zovo.hexviewer.OpenInHexViewerAction"
+            text="Open in Hex Viewer" description="Show the bytes of the file in a read-only hex viewer"
+            icon="AllIcons.FileTypes.Any_type">
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="ProjectViewEditSource"/>
+      <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+</idea-plugin>

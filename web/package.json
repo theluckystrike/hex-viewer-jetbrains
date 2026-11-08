@@ -1,0 +1,15 @@
+{
+  "name": "hex-viewer-jetbrains-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Browser bundle for the Hex Viewer JetBrains plugin. Built into ../src/main/resources/web.",
+  "license": "MIT",
+  "scripts": {
+    "bundle": "node build.js",
+    "test": "node test/run-tests.js"
+  },
+  "devDependencies": {
+    "buffer": "6.0.3",
+    "esbuild": "0.28.2"
+  }
+}

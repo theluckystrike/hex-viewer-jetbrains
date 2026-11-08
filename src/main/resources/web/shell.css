@@ -1,0 +1,7 @@
+/* JetBrains shell: the IDE colours come from /t/<token>/theme.css as --vscode-* variables. */
+.zovo-support { font-size: 11px; line-height: 16px; padding: 0 4px; color: var(--vscode-descriptionForeground); opacity: .85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.zovo-support:hover, .zovo-support:focus-within { opacity: 1; }
+.zovo-support a { color: var(--vscode-textLink-foreground, #3794ff); text-decoration: none; }
+.zovo-support a:hover, .zovo-support a:focus { text-decoration: underline; }
+.zovo-support .sep { padding: 0 4px; opacity: .7; }
+.zovo-support [hidden] { display: none; }
